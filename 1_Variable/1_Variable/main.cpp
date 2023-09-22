@@ -152,12 +152,13 @@ int main()
 	int nResult = (10 == 11) ? 100 : 50;
 
 	// 문제 아래 time 들어있는 초 값에 분과 시간을 구해라
-	unsigned int sec = 987654321;//초
+	unsigned int total_sec = 987654321;//초
 
-	unsigned int hour = 0, min = 0, sec = 0;
-	hour = 0;
-	min = 0;
-	sec = 0;
+	unsigned int day = 0, hour = 0, min = 0, sec = 0; 
+	sec = total_sec % 60;//0~59;
+	min = (total_sec / 60) % 60;//0~59
+	hour = ((total_sec / 60) / 60) % 24;
+		day = (((total_sec / 60) / 60) / 24);
 
 	printf("%d", 1 + 1);
 
