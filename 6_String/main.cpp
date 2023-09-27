@@ -70,4 +70,5 @@ int main()
 	wcscat_s(szWCharLen, 20, L"hij"); // 문자열 붙이기(iostream 라이브러리 함수)
 	wprintf(L"szWCharLen=%s\n", szWCharLen);
 	
+
 }
