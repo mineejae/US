@@ -22,6 +22,15 @@ unsigned int GetStringLength(const wchar_t* _pString)
 
 }
 
+// _Dest : "abcde"
+// _pSource : "fghi"
+
+void StringCar(wchar_t* _Dest, unsigned int size, const wchar_t* _pSource)
+{
+
+}
+
+
 int main()
 {
 	// 문자 처리
@@ -48,15 +57,17 @@ int main()
 	
 	_wsetlocale(LC_ALL, L"korean"); //와이드 문자 언어 설정
 	
-	wchar_t arrWC1[10] = L"abc한글";// wchar_t배열에 문자열을 넣을 때, 옆에 L을 붙인다.
-	wprintf(L"arrWC1=%s", arrWC1);// wchar_t형을 출력할 때는 wprintf를 사용, 출력 문자열 앞에 L을 붙인다.
+	wchar_t arrWC1[10] = L"abc한글"; // wchar_t배열에 문자열을 넣을 때 앞에 L을 붙인다.
+	wprintf(L"arrWC1=%s\n", arrWC1); // wchar_t형을 출력할 때는 wprintf를 사용, 출력 문자열 앞에 L을 붙인다
 
-	wchar_t szWChar[10] = L"abcdefghi";//마지막에 문자에 마지막이라는 표기로 '\n'문자가 들어간다.
-	wprintf(L"arrWC1=%s\n", szWChar);
-
-	wchar_t szWCharLen[20] = L"abcdefg";
-	int size = wcslen(szWCharLen);
+	wchar_t szWChar[10] = L"abcdefghi"; // 마지막에 문자에 마지막이라는 표기로 '\0'문자가 들어간다. (10개를 맞추려면 j 하나를 빼줘야 함)
+	wprintf(L"aszWChar=%s\n", szWChar);
+	
+	wchar_t szWCharLen[20] = L"abcdefg"; // 문자열 길이 구하기(iostream 라이브러리 함수)
+	int size = wcslen(szWCharLen); // 문자열 길이 구하기
 	printf("szWCharLen size=%d\n", size);
 
+	wcscat_s(szWCharLen, 20, L"hij"); // 문자열 붙이기(iostream 라이브러리 함수)
+	wprintf(L"szWCharLen=%s\n", szWCharLen);
 	
 }
