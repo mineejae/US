@@ -40,9 +40,14 @@ int main()
 	// multi-byte에 문제를 해결하기 위해 나온 유니코드 방식
 	// 세계의 거의 모든 문자를 표현할 수 있기 때문에 최근에 많이 사용됨
 	// 가장 자주 사용하는 방식은 UTF-8이 있다.
-	wchar_t wc1 = 'a';//2Byte(0~65535)에서 앞에 검증용 1bit를 제외하면 32,767개 표현가능
+	//2Byte(0~65535)에서 앞에 검증용 1bit를 제외하면 32,767개 표현가능
 	// wchar_t형에 문자를 넣을 때, 앞에 L을 붙인다.
+
+	wchar_t wc1 = L'a';
 	wprintf(L"wc1=%c\n", wc1);// wchar_t형을 출력할 때는 wprintf를 사용, 출력 문자열 앞에 L을 붙인다.
+	
+	_wsetlocale(LC_ALL, L"korean"); //와이드 문자 언어 설정
+	
 	wchar_t arrWC1[10] = L"abc한글";// wchar_t배열에 문자열을 넣을 때, 옆에 L을 붙인다.
 	wprintf(L"arrWC1=%s", arrWC1);// wchar_t형을 출력할 때는 wprintf를 사용, 출력 문자열 앞에 L을 붙인다.
 
