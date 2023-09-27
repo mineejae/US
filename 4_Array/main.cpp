@@ -131,8 +131,7 @@ int main()
 
 	for (int i = 0; i < 10; i++)
 	{
-		printf("%d번째 배열 값은 %d입니다.\n", i, arrInt[i]);//2개 이상의 파라메타 출력방법
-	
+		printf("%d번째 배열 값은 %d입니다.\n", i, arrInt[i]);//2개 이상의 파라메타 출력 방법
 	}
 
 	// foreach문
