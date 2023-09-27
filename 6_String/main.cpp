@@ -8,7 +8,18 @@ unsigned int GetStringLength(const wchar_t* _pString)
 	while (1)
 	{
 		wchar_t c = *(_pString + i);//순차적으로 주소값에 문자를 저장
+
+		//if(c == 0)
+		if (c == '\0')
+		{
+			break;
+		}
+
+		++i;
 	}
+
+	return i;
+
 }
 
 int main()
