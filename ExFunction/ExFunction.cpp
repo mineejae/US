@@ -111,13 +111,16 @@ int ArraySum(int* arr, int length)
 
 int main()
 {
+	
+
 	//printf로 "Sum=%d"로 Sum함수 결과 출력
 	//printf로 "Minus=%d\n"로 Minus함수 결과 출력
 	//printf로 "Multi=%d\n"로 Multi함수 결과 출력
 	//printf로 "Divid=%d\n"로 Divid함수 결과 출력
 
 	int Sum1 = 5;// 이건 그저 변수일뿐
-	int arr[] = { 1, 2, 3 };
+	int arr[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
 	printf("Sum=%d\n", Sum(2, 4));
 
 	printf("Minus=%d\n", Minus(9, 1));
@@ -130,7 +133,7 @@ int main()
 	printf("AverageSum=%d\n", Sum1); //반환값이 없는 void형 함수이기 때문에 호출을 위해서 따로 빼냄, 'Sum1'에 저장된 값을 불러옴
 
 
-	printf("ArraySum=%d\n", ArraySum(arr, 3));
+	printf("ArraySum=%d\n", ArraySum(arr, 10));
 
 	CPhoneShop Phone(10, 100);// Phone은 그냥 이름 class에 대한 이름
 	
