@@ -2,6 +2,16 @@
 #include <vector>
 #include <list>
 
+struct stMonster
+{
+	int index = 0;//몬스터 타입
+};
+
+bool IsFindMonIndex(const stMonster& mon)
+{
+	return mon.index == 3;// 만약 mon.index가 3이면 true 반환, 아니면 false반환
+}
+
 class CShop
 {
 public:
@@ -155,7 +165,7 @@ int main()
 	//	listIter++;
 	//}
 	
-	std::list<int> listInt{ 0,1,2,3,4, };
+	std::list<int> listInt{ 0,1,2,22,75, };
 	listInt.push_back(100);// 리스트에 뒤쪽에 값을 추가 연결한다.
 	listInt.push_front(200);// 리스트에 앞쪽에 값을 추가 연결한다.
 
@@ -168,17 +178,60 @@ int main()
 	}
 
 	// 리스트에서 특정 원소 찾기
-	std::list<int>::iterator it = std::find(listInt.begin(), listInt.end(), 5);
+	std::list<int>::iterator it = std::find(listInt.begin(), listInt.end(), 22);
 
 	
 	if (it != listInt.end())
 	{
 		// 찾았다.
 		printf("Find Value=%d\n", *it);
+		// listInt.erase(it);// 리스트 안에 특정 원소 제거하기
+		int value = 2023;
+		// listInt.insert(it, value); // 특정 요소 앞쪽에 새로운 요소 끼워넣기
+		// listInt.emplace(it, 2024); // 특정 요소 앞쪽에 새로운 요소 끼워넣기
 	}
 	else
 	{
 		// 못 찾았다.
 		printf("Find List Fail!\n" );
 	}
+
+	for (const int& value : listInt)
+	{
+		printf("List Value=%d\n", value);
+	}
+
+	// 구조체 배열 find_if로 특정 요소 찾기
+	std::list<stMonster> arrMon;
+
+	for (int i = 1; i < 6; ++i)
+	{
+		stMonster temp;
+		temp.index = i;
+		arrMon.push_back(temp);
+	}
+
+	std::list<stMonster>::iterator monIter;
+	// monIter = std::find_if(arrMon.begin(), arrMon.end(), IsFindMonIndex);
+	monIter = std::find_if(arrMon.begin(), arrMon.end()
+		, [](const stMonster& mon)
+		{
+			return mon.index == 12;
+		});
+
+	if (monIter != arrMon.end())
+	{
+		// 찾았다
+		printf("monIter index=%d\n", monIter->index);
+	}
+	else
+	{
+		// 못찾음
+		printf("monIter find Fail!\n", monIter->index);
+	}
+	for (const stMonster& value : arrMon)
+	{
+		printf("monster index=%d\n", value.index);
+	}
+	
 }

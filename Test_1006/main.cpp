@@ -21,11 +21,78 @@
 // R = 첫번째 숫자와 두번째 숫자 사이에 숫자를 모두 더한값
 // "3과 30사이에 모든 수를 더하면 %d입니다.", R
 
+//함수 이름 : standardWeight
+//맴버 변수 : float height
+//리턴 값 : float
+//공식 : (height - 100) * 0.9
+float standardWeight(float height)
+{
+    return(height - 100) * 0.9;
+}
 
+//함수 이름 : GetBMI
+//맴버 변수 : float weight, float standardWeight
+//리턴 값 : float
+//공식 : (weight - standardWeight)  * 100 / standardWeight
+float GetBMI(float weight, float standardWeight)
+{
+    return (weight - standardWeight) * 100 / standardWeight;
+}
+
+// 개속 반복, 0 입력시 종료
+
+BMI를 계산하시겠습니까 ? 0)No 1)Yes
+몸무게를 입력해주세요 : weight에 값 입력
+키를 입력해주세요 : height에 값 입력
+bmi에 따른 등급 판정
+등급        비만도 수치
+10이하        정상
+10초과 20이하    과체중
+20 초과        비만
 
 
 int main()
 {
+   
+    bool bRun = true;
+
+    while(bRun)
+    {
+        printf("BMI를 계산하시겠습니까? 0)No 1)Yes : ");
+        int input = 0;
+        scantf_s("%d" , &input);
+
+        switch (input)
+        {
+        case 0:
+            bRun = falsse;
+            break;
+
+        case 1:
+        {
+            int weight = 0, height = 0, BMI = 0;
+            printf("몸무게를 입력해주세요 : ");
+            scanf_s("%d", &weight);
+            printf("키를 입력해주세요 : ");
+            scanf_s("%d", &height);
+            BMI = GetBMI(weight, standardWeight(height));
+
+            if (10 <= BMI){ 
+                printf("정상\n"); 
+            }
+            else if (10 < BMI && BMI <= 20) {
+                printf("과체중\n");
+            }
+            else if (20 > BMI) {
+                printf("비만\n");
+            }
+        }
+            break;
+        
+        default:
+            break;
+        }
+
     int a = 0;
     int b = 0;
 
