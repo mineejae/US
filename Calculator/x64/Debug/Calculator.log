@@ -1,0 +1,4 @@
+﻿  Calculator.cpp
+D:\Works\US\Calculator\Calculator.cpp(77,69): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Works\US\Calculator\Calculator.cpp(77,66): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Calculator.vcxproj -> D:\Works\US\Calculator\x64\Debug\Calculator.exe
